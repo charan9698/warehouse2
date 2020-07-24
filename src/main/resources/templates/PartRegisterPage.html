@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:tl="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>hello welcome</h2>
+	<form tl:action="@{part/save}" method="POST"  tl:object="${partType}">
+		
+       
+       Part Name:<input type="text" tl:field="*{partName}"/>
+		
+	Part Code:
+	<input type="radio" tl:field="*{partCode}" value="A">A
+    <input type="radio" tl:field="*{partCode}" value="B">B
+		
+Part Mode:<select tl:field="*{partMode}">
+<option value="">--SELECT--</option>
+<option value="Pat-A">Pat-A</option>
+<option value="Pat-B">Pat-B</option>
+<option value="Pat-C">Pat-C</option>
+</select>
+
+
+<input type="submit" value="Create Part" />
+
+	</form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:tl="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>CODE</th>
+			<th>MODE</th>
+			<th>OPERATIONS</th>
+		</tr>
+
+		<tr tl:each="ob:${list}">
+			<td tl:text="${ob.id}"></td>
+			<td tl:text="${ob.partName}"></td>
+			<td tl:text="${ob.partCode}"></td>
+			<td tl:text="${ob.partMode}"></td>
+<td> <a tl:href ="@{/part/delete/{id} (id=${ob.id})}">DELTE</a></td>
+<td> <a tl:href ="@{/part/delete/{id} (id=${ob.id})}">EDIT</a></td>
+		</tr>
+
+
+
+	</table>
+
+</body>
+</html>

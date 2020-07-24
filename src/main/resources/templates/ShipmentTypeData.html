@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>Welcome To data page]</h3>
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>CODE</th>
+			<th>MODE</th>
+			<th>ENABLE</th>
+			<th>GRADE</th>
+			<th>DESCRIPTION</th>
+			<th>OPERATION</th>
+			
+		</tr>
+
+		<tr th:each="ob:${list}">
+			<td th:text="${ob.id}"></td>
+			<td th:text="${ob.shipmentMode}"></td>
+			<td th:text="${ob.shipmentCode}"></td>
+			<td th:text="${ob.enableShipment}"></td>
+			<td th:text="${ob.shipmentGrade}"></td>
+			<td th:text="${ob.description}"></td>
+			<td> <a th:href="@{/shipmenttype/delete/{id}(id=${ob.id})}">DELETE</a></td>
+			
+			
+
+		</tr>
+		
+	</table>
+</body>
+</html>
